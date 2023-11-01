@@ -1,0 +1,14 @@
+{
+    "name": "art4/moodle-plugin-boilerplate",
+    "description": "Boilerplate for moodle plugin develoment",
+    "type": "project",
+    "license": "GPL3-or-later",
+    "authors": [
+        {
+            "name": "Artur Weigandt"
+        }
+    ],
+    "require-dev": {
+        "moodlehq/moodle-plugin-ci": "^1.5"
+    }
+}
