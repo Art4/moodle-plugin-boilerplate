@@ -1,0 +1,2 @@
+# Moodle Plugin Boilerplate
+
