@@ -1,5 +1,5 @@
 @local @local_moodle_plugin
-Feature: Using the admin page
+Feature: Using the homepage
   In order to be able to use the homepage
   As admin
   I need to be able to read my username
