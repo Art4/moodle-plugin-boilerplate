@@ -82,17 +82,17 @@ jobs:
       #   if: ${{ !cancelled() }}
       #   run: moodle-plugin-ci phpcs --max-warnings 0
 
-      # - name: Moodle PHPDoc Checker
-      #   if: ${{ !cancelled() }}
-      #   run: moodle-plugin-ci phpdoc --max-warnings 0
+      - name: Moodle PHPDoc Checker
+        if: ${{ !cancelled() }}
+        run: moodle-plugin-ci phpdoc --max-warnings 0
 
-      # - name: Validating
-      #   if: ${{ !cancelled() }}
-      #   run: moodle-plugin-ci validate
+      - name: Validating
+        if: ${{ !cancelled() }}
+        run: moodle-plugin-ci validate
 
-      # - name: Check upgrade savepoints
-      #   if: ${{ !cancelled() }}
-      #   run: moodle-plugin-ci savepoints
+      - name: Check upgrade savepoints
+        if: ${{ !cancelled() }}
+        run: moodle-plugin-ci savepoints
 
       # - name: Mustache Lint
       #   if: ${{ !cancelled() }}
