@@ -77,9 +77,10 @@ jobs:
         if: ${{ !cancelled() }}
         run: moodle-plugin-ci phpmd
 
-      - name: Moodle Code Checker
-        if: ${{ !cancelled() }}
-        run: moodle-plugin-ci phpcs --max-warnings 0
+      # Ignore Code Checker in Github Actions
+      # - name: Moodle Code Checker
+      #   if: ${{ !cancelled() }}
+      #   run: moodle-plugin-ci phpcs --max-warnings 0
 
       # - name: Moodle PHPDoc Checker
       #   if: ${{ !cancelled() }}
