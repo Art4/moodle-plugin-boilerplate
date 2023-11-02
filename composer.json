@@ -15,6 +15,12 @@
         "phpunit/phpunit": "^9.6",
         "vimeo/psalm": "^5.4.0"
     },
+    "scripts": {
+        "lint": "moodle-plugin-ci phplint ./local_moodle_plugin",
+        "phpcpd": "moodle-plugin-ci phpcpd ./local_moodle_plugin",
+        "phpmd": "moodle-plugin-ci phpmd ./local_moodle_plugin",
+        "phpcs": "phpcs --standard=moodle --extensions=php -p -w -s --colors --report-full --report-width=132 --encoding=utf-8 ./local_moodle_plugin"
+    },
     "repositories": [
         {
             "type": "vcs",
