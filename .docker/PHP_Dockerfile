@@ -17,7 +17,8 @@ RUN apt-get --yes --no-install-recommends install \
     libjpeg62-turbo-dev \
     libmagickwand-dev \
     libpng-dev \
-    libzip-dev
+    libzip-dev \
+    default-mysql-client
 RUN docker-php-ext-configure gd \
     --with-freetype \
     --with-jpeg

@@ -5,6 +5,44 @@ services:
     build:
       context: ./.docker
       dockerfile: PHP_Dockerfile
+    environment:
+      DB_USER: moodle
+      DB_PASS: moodle
+      DB_NAME: moodle
+      DB_HOST: db
+      DB_PORT: 3306
     volumes:
       - "./:/var/www/project"
 
+  db:
+    image: mariadb:10.7
+    command: >
+              --character-set-server=utf8mb4
+              --collation-server=utf8mb4_bin
+              --innodb_file_per_table=On
+              --wait-timeout=28800
+              --skip-log-bin
+    environment:
+      MYSQL_ROOT_PASSWORD: "password"
+      MYSQL_USER: moodle
+      MYSQL_PASSWORD: "moodle"
+      MYSQL_DATABASE: moodle
+    # volumes:
+    #   - persistent:/var/lib/mysql
+    #   - persistent:/var/www/moodledata
+
+  pma:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      # https://docs.phpmyadmin.net/en/latest/setup.html#docker-environment-variables
+      PMA_HOST: db
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: "password"
+      UPLOAD_LIMIT: 250M
+    ports:
+      - 8080:80
+    # links:
+    #   - db:db
+    restart: always
+    depends_on:
+      - "db"
