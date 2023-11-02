@@ -1,6 +1,9 @@
 <?php
-namespace locale_moodle_plugin;
+namespace local_moodle_plugin;
 
+/**
+ * @package local_moodle_plugin
+ */
 class sample_test extends \basic_testcase {
     public function test_equals(): void {
         $a = 1 + 2;
