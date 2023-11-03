@@ -6,13 +6,15 @@ services:
       context: ./.docker
       dockerfile: PHP_Dockerfile
     environment:
-      DB_USER: moodle
-      DB_PASS: moodle
-      DB_NAME: moodle
+      DB_USER: root
+      DB_PASS: password
+      DB_NAME: moodle_ci
       DB_HOST: db
       DB_PORT: 3306
     volumes:
       - "./:/var/www/project"
+    depends_on:
+      - "db"
 
   db:
     image: mariadb:10.7
