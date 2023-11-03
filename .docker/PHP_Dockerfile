@@ -45,6 +45,8 @@ RUN mkdir -p /var/www/.composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN composer --version
 
+RUN locale-gen en_AU.UTF-8
+
 # Install nvm
 ENV NVM_DIR /var/www/.nvm
 ENV NODE_VERSION lts/gallium
