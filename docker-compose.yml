@@ -29,9 +29,9 @@ services:
       MYSQL_USER: moodle
       MYSQL_PASSWORD: "moodle"
       MYSQL_DATABASE: moodle
-    # volumes:
-    #   - persistent:/var/lib/mysql
-    #   - persistent:/var/www/moodledata
+    volumes:
+      - persistent:/var/lib/mysql
+      - persistent:/var/www/moodledata
 
   pma:
     image: phpmyadmin/phpmyadmin
@@ -48,3 +48,6 @@ services:
     restart: always
     depends_on:
       - "db"
+
+volumes:
+  persistent:
