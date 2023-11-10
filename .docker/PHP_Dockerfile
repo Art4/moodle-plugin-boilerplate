@@ -17,7 +17,8 @@ RUN apt-get --yes --no-install-recommends install \
     libjpeg62-turbo-dev \
     libmagickwand-dev \
     libpng-dev \
-    libzip-dev
+    libzip-dev \
+    default-mysql-client
 RUN docker-php-ext-configure gd \
     --with-freetype \
     --with-jpeg
@@ -43,6 +44,8 @@ RUN php --version
 RUN mkdir -p /var/www/.composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN composer --version
+
+RUN locale-gen en_AU.UTF-8
 
 # Install nvm
 ENV NVM_DIR /var/www/.nvm

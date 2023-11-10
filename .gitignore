@@ -1,1 +1,7 @@
+/moodledata/
+/moodle/
+/moodle-plugin-ci/
+/node_modules/
+/package-lock.json
+/package.json
 /vendor/
